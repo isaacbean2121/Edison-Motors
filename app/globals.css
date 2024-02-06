@@ -74,3 +74,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: white; /* Color of the underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-underline:hover::after {
+  width: 100%;
+}
