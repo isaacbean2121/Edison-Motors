@@ -10,12 +10,11 @@ export default function Home() {
 
   // Only works with external links. No idea why. The assests work everywhere else so its not a problem with the routs. 
   const slideImages = [
-    'https://i.imgflip.com/1pm297.jpg',
-    '/assets/500 Info/500 Info 2-1.jpg',
-    '/assets/500 Info/500 Info 2-2.jpg',
-    '/assets/500 Info/500 Info 2-3.jpg',
-    '/assets/500 Info/500 Info 2-4.jpg',
-    '/assets/500 Info/500 Info 2-5.jpg',
+    'https://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%202-1.jpg',
+    'https://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%202-2.jpg',
+    'https://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%202-3.jpg',
+    '/assets/500 Ihttps://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%202-4.jpg',
+    'https://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%202-5.jpg',
   ];
 
   const prevSlide = () => {
@@ -46,6 +45,10 @@ export default function Home() {
         <section className="h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center relative"
                  style={{ backgroundImage: "url('/assets/500 Info/500 Info 1.jpg')" }}>
           <div className="absolute top-1/4 left-16"></div>
+
+          <div className="absolute top-1/4 left-16">
+          <p className="text-white font-bold text-4xl">500 Series - Tandem Drive</p> 
+        </div>
 
           <div className="w-full p-4 absolute bottom-0 bg-black bg-opacity-50">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -134,6 +137,83 @@ export default function Home() {
 
   </div>
 </section>
+
+<section className="bg-[#222831]"> {/* Background color of the entire section */}
+  <div className="max-w-8xl mx-auto pt-2 pb-12 px-4 sm:px-6 lg:px-8"> {/* Minimally reduce top padding with pt-2 */}
+
+    {/* Row for the image and the text */}
+    <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
+      {/* Image Container */}
+      <div className="flex-1 p-0">
+        <img src="\assets\500 Info\500 Info 8-1.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+      </div>
+
+      {/* Text Container */}
+      <div className="flex-1 text-white p-5 pr-10 md:pr-20">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4">Easy to service so you can keep on trucking as soon as possible</h2>
+        {/* Additional text or elements here */}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section className="bg-[#222831]"> {/* The background color of the entire section */}
+  <div className="max-w-8xl mx-auto pt-2 pb-12 px-4 sm:px-6 lg:px-8"> {/* Minimally reduce top padding with pt-2 */}
+
+    {/* Row for the text and the image */}
+    <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
+      {/* Text Container */}
+      <div className="flex-1 text-white p-5 pr-10 md:pr-20">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4">Easy to service so you can keep on trucking as soon as possible</h2>
+        {/* Additional text or elements here */}
+      </div>
+
+      {/* Image Container */}
+      <div className="flex-1 p-0">
+        <img src="\assets\500 Info\500 Info 6.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section className="bg-[#222831]"> {/* Background color of the entire section */}
+  <div className="max-w-8xl mx-auto pt-2 pb-12 px-4 sm:px-6 lg:px-8"> {/* Minimally reduce top padding with pt-2 */}
+
+    {/* Row for the image and the text */}
+    <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
+      {/* Image Container */}
+      <div className="flex-1 p-0">
+        <img src="\assets\500 Info\500 Info 7.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+      </div>
+
+      {/* Text Container */}
+      <div className="flex-1 text-white p-5 pr-10 md:pr-20">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4">Easy to service so you can keep on trucking as soon as possible</h2>
+        {/* Additional text or elements here */}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section className="bg-[#222831]">
+  <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-center">
+      <iframe 
+        width="3000" 
+        height="1000" 
+        src="https://www.youtube.com/embed/an6e2Lh9u58" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
 
 
 
