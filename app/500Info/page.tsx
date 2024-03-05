@@ -43,7 +43,7 @@ export default function Home() {
 
       <main>
         <section className="h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center relative"
-                 style={{ backgroundImage: "url('/assets/500 Info/500 Info 1.jpg')" }}>
+                 style={{ backgroundImage: "url('https://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%201.jpg')" }}>
           <div className="absolute top-1/4 left-16"></div>
 
           <div className="absolute top-1/4 left-16">
