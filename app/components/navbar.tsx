@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import logo from '../public/assets/Logo/edison_logo_inverted_2.png';
+import logo from '../../public/assets/logo/edison_logo_inverted_2.png';
 
 
 const MenuItems = () => {
