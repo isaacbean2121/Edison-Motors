@@ -35,7 +35,7 @@ export default function NavBar() {
             <div className="flex justify-between items-center w-full mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 {/* Logo */}
                 <div>
-                    <img src={logo.src} alt="logo" style={{ height: '50px' }} />
+                    <img src={logo.src} alt="logo" style={{ height: '50px' }} />    
                 </div>
 
                 {/* Menu Icon for smaller screens */}

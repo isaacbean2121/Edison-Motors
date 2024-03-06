@@ -31,18 +31,23 @@ export const Slide500 = () => {
     };
 
     return (
-        <section className="h-screen w-full overflow-hidden relative">
-          <div className='w-full h-full'>
+        <section className="h-screen w-full overflow-hidden relative snap-always snap-start">
+          <div className='w-full h-full flex'>
             {/* Here we use the image from the slideImages array based on currentIndex */}
             <div style={{ backgroundImage: `url(${slideImages[currentIndex]})` }}
                  className='w-full h-full bg-no-repeat bg-center bg-cover'></div>
 
-            <BsChevronCompactLeft onClick={prevSlide} size={30} className='absolute top-[50%] left-5 text-white'/>
-            <BsChevronCompactRight onClick={nextSlide} size={30} className='absolute top-[50%] right-5 text-white'/>
+            <BsChevronCompactLeft onClick={prevSlide} size={30} className='absolute top-[50%] left-5 text-black hover:scale-150 duration-150'/>
+            <BsChevronCompactRight onClick={nextSlide} size={30} className='absolute top-[50%] right-5 text-black hover:scale-150 duration-150'/>
 
-            <div className='absolute bottom-4 w-full flex justify-center'>
+            <div className="absolute bottom-24 text-4xl left-1/2 transform -translate-x-1/2">
+              <h2>
+                Multiple Applications & Configurations
+              </h2>
+            </div>
+            <div className='absolute bottom-10 w-full flex justify-center'>
               {slideImages.map((_, slideIndex) => (
-                <RxDotFilled key={slideIndex} onClick={() => goToSlide(slideIndex)} className={`mx-1 ${currentIndex === slideIndex ? 'text-blue-600' : 'text-white'}`} />
+                <RxDotFilled key={slideIndex} onClick={() => goToSlide(slideIndex)} className={`scale-150 mx-1 ${currentIndex === slideIndex ? 'text-blue-600' : 'text-white'}`} />
               ))}
             </div>
           </div>
