@@ -6,6 +6,7 @@ import NavBar from "../components/navbar";
 import { Slide500 } from '../components/500Info/Slide500';
 import { BuildYoursButton } from '../components/BuildYoursButton';
 import { AnimatedElement } from '../components/AnimatedElement';
+import {Footer} from "../components/Footer";
 
 export default function Home() {
 
@@ -221,6 +222,7 @@ export default function Home() {
 
 
       </main>
+      <Footer/>
     </div>
   );
 }
