@@ -30,7 +30,7 @@ export default function Home() {
             <BuildYoursButton />
           </div>
 
-          <div className="w-full p-4 flex justify-center absolute bottom-20 bg-black opacity-50">
+          <div className="w-full p-4 flex justify-center absolute bottom-20 bg-black opacity-80">
             <AnimatedElement>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-52">
               <div className="text-center select-none hover:scale-125 duration-150">
@@ -194,10 +194,10 @@ export default function Home() {
 </section>
 
 <section className="bg-[#222831]">
-  <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+  <div className="w-full">
     <div className="flex justify-center">
       <iframe 
-        width="3000" 
+        width="3500" 
         height="1000" 
         src="https://www.youtube.com/embed/an6e2Lh9u58" 
         title="YouTube video player" 
