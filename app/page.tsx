@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from './components/Hero'
+import Hero from '../components/Hero'
 import five from '../public/assets/LandingPage/LandingPage2.jpg';
 import seven from '../public/assets/LandingPage/LandingPage3.jpg';
 import front from '../public/assets/LandingPage/front.jpg';

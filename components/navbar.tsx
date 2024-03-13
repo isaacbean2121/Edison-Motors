@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import logo from '../../public/assets/logo/edison_logo_inverted_2.png';
+import logo from '../public/assets/Logo/edison_logo_inverted_2.png';
 
 
 const MenuItems = () => {
@@ -35,7 +35,7 @@ export default function NavBar() {
             <div className="flex justify-between items-center w-full mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 {/* Logo */}
                 <div>
-                    <img src={logo.src} alt="logo" style={{ height: '50px' }} />    
+                    <img src={logo.src} alt="logo" style={{ height: '50px' }} />
                 </div>
 
                 {/* Menu Icon for smaller screens */}
