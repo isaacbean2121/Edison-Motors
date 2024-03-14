@@ -6,14 +6,19 @@ import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../../public/assets/logo/edison_logo_inverted_2.png';
+import Link from 'next/link';
 
 
 const MenuItems = () => {
-    const items = ["250 Series", "500 Series", "750 Series", "Retrofit Kits", "About Us"];
+    const items = [["250 Series", "/"], ["500 Series", "/500Info"], ["750 Series", "/750Info"], ["Retrofit Kits", "/"], ["About Us", "/"]];
     return (
         <ul className="flex flex-col md:flex-row items-center">
             {items.map((item) => (
-                <li key={item} className="px-4 py-2 cursor-pointer hover:rounded custom-underline">{item}</li>
+                <li key={item[0]} className="px-4 py-2 cursor-pointer hover:rounded custom-underline">
+                    <Link href={item[1]}>
+                        {item[0]}
+                    </Link>
+                </li>
             ))}
         </ul>
     );
@@ -35,7 +40,9 @@ export default function NavBar() {
             <div className="flex justify-between items-center w-full mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 {/* Logo */}
                 <div>
-                    <img src={logo.src} alt="logo" style={{ height: '50px' }} />    
+                    <Link href="/">
+                        <img src={logo.src} alt="logo" style={{ height: '50px' }} />    
+                    </Link>
                 </div>
 
                 {/* Menu Icon for smaller screens */}
