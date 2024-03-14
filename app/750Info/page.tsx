@@ -20,7 +20,7 @@ export default function Home() {
       <NavBar />
       <main className='overflow-hidden'>
         <section className="h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center relative"
-                 style={{ backgroundImage: "url('/assets/750 Info/750 Info 2-1.jpg')" }}>
+                 style={{ backgroundImage: "url('/assets/750Info/750 Info 2-1.jpg')" }}>
           <div className="absolute top-1/4 left-16"></div>
 
           <div className="absolute top-36 left-72">
@@ -64,7 +64,7 @@ export default function Home() {
     <div className="flex flex-col md:flex-row items-center gap-8 mb-12"> {/* Adds gap between items on larger screens */}
       {/* First Image Container */}
       <div className="md:flex-1">
-        <img src="/assets/500 Info/500 Info 3.jpg" alt="Axle Image" className="w-full h-auto shadow-lg" /> {/* shadow for depth */}
+        <img src="/assets/500Info/500 Info 3.jpg" alt="Axle Image" className="w-full h-auto shadow-lg" /> {/* shadow for depth */}
       </div>
       <AnimatedElement>
       {/* Text Container */}
@@ -80,7 +80,7 @@ export default function Home() {
 
     {/* Second Image Container */}
     <div className="w-full">
-      <img src="assets\750 Info\750 Info 1.jpg" alt="Truck Image" className="w-full h-auto shadow-lg" /> {/* shadow for depth */}
+      <img src="assets\750Info\750 Info 1.jpg" alt="Truck Image" className="w-full h-auto shadow-lg" /> {/* shadow for depth */}
     </div>
 
   </div>
@@ -105,7 +105,7 @@ export default function Home() {
 
       {/* Image Container */}
       <div className="flex-1 p-0">
-        <img src="assets\500 Info\500 Info 5.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+        <img src="assets\500Info\500 Info 5.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
       </div>
     </div>
 
@@ -119,7 +119,7 @@ export default function Home() {
     <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
       {/* Image Container */}
       <div className="flex-1 p-0">
-        <img src="\assets\500 Info\500 Info 8-1.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+        <img src="\assets\500Info\500 Info 8-1.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
       </div>
 
       {/* Text Container */}
@@ -155,7 +155,7 @@ export default function Home() {
 
       {/* Image Container */}
       <div className="flex-1 p-0">
-        <img src="\assets\500 Info\500 Info 6.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+        <img src="\assets\500Info\500 Info 6.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
       </div>
     </div>
 
@@ -169,7 +169,7 @@ export default function Home() {
     <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
       {/* Image Container */}
       <div className="flex-1 p-0">
-        <img src="\assets\500 Info\500 Info 7.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+        <img src="\assets\500 Info\500Info 7.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
       </div>
 
       {/* Text Container */}
