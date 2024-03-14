@@ -169,7 +169,7 @@ export default function Home() {
     <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
       {/* Image Container */}
       <div className="flex-1 p-0">
-        <img src="\assets\500 Info\500Info 7.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
+        <img src="\assets\500Info\500Info 7.jpg" alt="Engine Image" className="w-full h-auto shadow-lg" />
       </div>
 
       {/* Text Container */}
