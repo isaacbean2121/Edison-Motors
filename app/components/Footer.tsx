@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const Footer = () => {
     return (
         <footer className="snap-start bg-black text-white py-10">
@@ -10,17 +12,29 @@ export const Footer = () => {
             <div className="px-24">
                 <h1 className="text-3xl pb-2">Quick Links</h1>
                 <ul className="space-y-1">
-                    <li>Home</li>
-                    <li>Team</li>
-                    <li>Trucks</li>
-                    <li>Resources</li>
-                    <li>Store</li>
+                    <li>
+                      <Link className='hover:underline' href="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link className='hover:underline' href="https://www.edisonmotors.ca/team">Team</Link>
+                    </li>
+                    <li>
+                      <Link className='hover:underline' href="https://www.edisonmotors.ca/trucks">Trucks</Link>
+                    </li>
+                    <li>
+                      <Link className='hover:underline' href="https://www.edisonmotors.ca/resources">Resources</Link>
+                    </li>
+                    <li>
+                      <Link className='hover:underline' href="https://www.edisonmotors.ca/shop">Store</Link>
+                    </li>
                 </ul>
             </div>
             <div className="px-24">
                 <h1 className="text-3xl pb-2">Contact Us</h1>
                 <ul className="space-y-2">
-                    <li>https://www.edisonmotors.ca/contact</li>
+                    <li>
+                      <Link className="hover:underline" href="https://www.edisonmotors.ca/contact">https://www.edisonmotors.ca/contact</Link>
+                    </li>
                     <li>PO box 444, Merritt, BC, V1K-1B8, Canada</li>
                 </ul>
             </div>
