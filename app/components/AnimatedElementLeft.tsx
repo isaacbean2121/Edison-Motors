@@ -16,8 +16,8 @@ export const AnimatedElementLeft: React.FC<AnimatedElementProps> = ({ children }
     return (
       <div
         ref={ref}
-        className={`transition-transform duration-1000 ${
-          inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-64'
+        className={`transition-transform duration-500 ${
+          inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
         }`}
       >
         {children}
