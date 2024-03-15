@@ -16,17 +16,12 @@ export default function Home() {
       <Hero 
         title="500 Series"
         subtitle="Explore our range of products"
-        image={five.src} 
+        image={fivetandem.src} 
       />
       <Hero 
         title="750 Series"
         subtitle="Explore our range of products"
         image={seven.src} 
-      />
-      <Hero 
-        title="500 Series - Tandem Drive"
-        subtitle="Explore our range of products"
-        image={fivetandem.src} 
       />
 
     </div>
