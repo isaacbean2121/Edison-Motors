@@ -5,7 +5,7 @@ import Head from 'next/head';
 import NavBar from "../components/navbar";
 import { Slide500 } from '../components/500Info/Slide500';
 import { BuildYoursButton } from '../components/BuildYoursButton';
-import { AnimatedElement } from '../components/AnimatedElement';
+import { AnimatedElementBottom } from '../components/AnimatedElementBottom';
 import {Footer} from "../components/Footer";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
           </div>
 
           <div className="w-full p-4 flex justify-center absolute bottom-20 bg-black opacity-80">
-            <AnimatedElement>
+            <AnimatedElementBottom>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-52">
               <div className="text-center select-none hover:scale-125 duration-150">
                 <p className="text-white font-bold">2 Drive Axles</p>
@@ -52,7 +52,7 @@ export default function Home() {
               </div>
             
             </div>
-            </AnimatedElement>
+            </AnimatedElementBottom>
           </div>
         </section>
         <Slide500 />
@@ -66,7 +66,7 @@ export default function Home() {
       <div className="md:flex-1 ml- snap-always snap-start">
         <img src="/assets/500Info/500 Info 3.jpg" alt="Axle Image" className="w-full h-auto shadow-lg" /> {/* shadow for depth */}
       </div>
-    <AnimatedElement>
+    <AnimatedElementBottom>
       {/* Text Container */}
       <div className="md:flex-1 text-white p-10">
         <h2 className="text-3xl md:text-6xl font-bold mb-4">Tandem Drive E-axles</h2>
@@ -75,7 +75,7 @@ export default function Home() {
         </p>
         {/* Additional text or elements here */}
       </div>
-      </AnimatedElement>
+      </AnimatedElementBottom>
     </div>
     
 
@@ -96,13 +96,13 @@ export default function Home() {
       
       {/* Text Container */}
       <div className="flex-1 text-white p-5 pr-10 md:pr-20">
-      <AnimatedElement>
+      <AnimatedElementBottom>
         <h1 className="text-4xl mb-4">Engineered for Service</h1>
         <p className="text-xl mb-4">Experience unparalleled ease of maintenance with our electric truck, 
         meticulously designed for rugged terrain and heavy loads. With attention to every detail, 
         including field-serviceable parts and transparent fault codes, we ensure seamless operations and quick repairs. 
         Get ready for effortless maintenance and uninterrupted performance.</p>
-        </AnimatedElement> 
+        </AnimatedElementBottom> 
         {/* Additional text or elements here */}
       </div>      
       {/* Image Container */}
@@ -128,12 +128,12 @@ export default function Home() {
 
       {/* Text Container */}
       <div className="flex-1 text-white p-5 pr-10 md:pr-20">
-        <AnimatedElement>
+        <AnimatedElementBottom>
         <h1 className="text-4xl mb-4">Safety and Efficiency Redefined</h1>
         <p className="text-xl mb-4">With a seamlessly integrated steel cage providing ROPS protection, our cab prioritizes driver safety without compromising visibility. 
         Its unique design offers enhanced maneuverability in tight spaces and facilitates easy entry, while regenerative braking ensures safe, 
         efficient slowing.</p>
-        </AnimatedElement>
+        </AnimatedElementBottom>
         {/* Additional text or elements here */}
       </div>
     </div>
@@ -148,12 +148,12 @@ export default function Home() {
     <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
       {/* Text Container */}
       <div className="flex-1 text-white p-5 pr-10 md:pr-20">
-        <AnimatedElement>
+        <AnimatedElementBottom>
         <h1 className="text-4xl mb-4">Introducing Edison's Legacy of Durability</h1>
         <p className="text-xl mb-4">Inspired by classic trucks enduring over 50 years, our mission is to craft an L series built to last. 
         Through meticulous study, we've ensured every part is easy to fix and replace, designed for simplicity.
          With over 400,000 vocational trucks produced annually, trust Edison for enduring quality.</p>
-         </AnimatedElement>
+         </AnimatedElementBottom>
         {/* Additional text or elements here */}
       </div>
 
@@ -178,14 +178,14 @@ export default function Home() {
 
       {/* Text Container */}
       <div className="flex-1 text-white p-5 pr-10 md:pr-20">
-        <AnimatedElement>
+        <AnimatedElementBottom>
         <h1 className="text-4xl mb-4">Introducing Edison's Tailored Solutions</h1>
         <p className="text-xl mb-4">Our team of experts in power systems collaborates with you and your bodybuilder to customize your EV truck fleet, 
         ensuring optimal performance and seamless integration. 
         From specing trucks to supporting drivers and mechanics, we provide comprehensive support every step of the way. 
         Additionally, our in-house electricians assess and install charging infrastructure, guaranteeing efficient operations from truck to shop. 
         Experience a new level of EV integration with Edison.</p>
-        </AnimatedElement>
+        </AnimatedElementBottom>
         {/* Additional text or elements here */}
       </div>
     </div>

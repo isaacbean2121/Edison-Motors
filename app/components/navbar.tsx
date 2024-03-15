@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 
 const MenuItems = () => {
-    const items = [["250 Series", "/"], ["500 Series", "/500Info"], ["750 Series", "/750Info"], ["Retrofit Kits", "/"], ["About Us", "/"]];
+    const items = [["250 Series", "/"], ["500 Series", "/500Info"], ["750 Series", "/750Info"], ["Retrofit Kits", "/RetroFitKits"], ["About Us", "/"]];
     return (
         <ul className="flex flex-col md:flex-row items-center">
             {items.map((item) => (
