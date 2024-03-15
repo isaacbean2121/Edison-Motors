@@ -4,6 +4,7 @@ import five from '../public/assets/LandingPage/LandingPage2.jpg';
 import seven from '../public/assets/LandingPage/LandingPage3.jpg';
 import front from '../public/assets/LandingPage/front.jpg';
 import fivetandem from '../public/assets/500Info/500Info1.jpg';
+import { Footer } from './components/Footer';
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
         subtitle="Explore our range of products"
         image={seven.src} 
       />
+
+      <Footer />
 
     </div>
   );
