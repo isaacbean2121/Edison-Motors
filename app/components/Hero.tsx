@@ -1,9 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 
 
 
 
-export default function Hero({ title, subtitle, image }: { title: string, subtitle: string, image: string }) {
+export default function Hero({ title, subtitle, image, route }: { title: string, subtitle: string, image: string, route: string }) {
   return (
     <div className='h-screen snap-start bg-no-repeat bg-cover bg-center flex flex-col justify-between' 
          style={{ backgroundImage: `url(${image})` }}>
@@ -17,7 +18,9 @@ export default function Hero({ title, subtitle, image }: { title: string, subtit
       {/* Buttons at the bottom */}
       <div className='flex justify-center pb-10'>
         <button className='bg-black text-white px-4 py-2 rounded mr-4 hover:scale-110 duration-150'>Build Yours</button>
-        <button className='bg-white text-black px-4 py-2 rounded hover:scale-110 duration-150'>Learn More</button>
+        <button className='bg-white text-black px-4 py-2 rounded hover:scale-110 duration-150'>
+          <Link href={route}>Learn More</Link>
+        </button>
         
 
       </div>

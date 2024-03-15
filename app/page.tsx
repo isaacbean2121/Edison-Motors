@@ -12,17 +12,20 @@ export default function Home() {
       <Hero
         title=""
         subtitle="Explore our range of products"
-        image={front.src} 
+        image={front.src}
+        route='null' 
       />
       <Hero 
         title="500 Series"
         subtitle="Explore our range of products"
         image={fivetandem.src} 
+        route='/500Info'
       />
       <Hero 
         title="750 Series"
         subtitle="Explore our range of products"
-        image={seven.src} 
+        image={seven.src}
+        route='750Info' 
       />
 
       <Footer />
