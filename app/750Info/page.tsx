@@ -69,7 +69,7 @@ export default function Home() {
       <AnimatedElementBottom>
       {/* Text Container */}
       <div className="md:flex-1 text-white">
-        <h2 className="text-3xl md:text-6xl font-bold mb-4">Tandem Drive E-axles</h2>
+        <h2 className="text-3xl md:text-6xl font-bold mb-4">Tri Drive E-axles</h2>
         <p className="text-xl md:text-4xl">
           Producing 1005 HP and 102,600 ft.lbs of peak torque
         </p>
