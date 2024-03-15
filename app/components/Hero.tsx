@@ -16,8 +16,8 @@ export default function Hero({ title, subtitle, image }: { title: string, subtit
 
       {/* Buttons at the bottom */}
       <div className='flex justify-center pb-10'>
-        <button className='bg-black text-white px-4 py-2 rounded mr-4'>Build Yours</button>
-        <button className='bg-white text-black px-4 py-2 rounded'>Learn More</button>
+        <button className='bg-black text-white px-4 py-2 rounded mr-4 hover:scale-110 duration-150'>Build Yours</button>
+        <button className='bg-white text-black px-4 py-2 rounded hover:scale-110 duration-150'>Learn More</button>
         
 
       </div>
