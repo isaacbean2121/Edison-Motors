@@ -1,5 +1,3 @@
-"use client"
-
 import { useInView } from 'react-intersection-observer';
 import { ReactNode } from 'react';
 
@@ -17,7 +15,7 @@ export const AnimatedElementBottom: React.FC<AnimatedElementProps> = ({ children
       <div
         ref={ref}
         className={`transition-transform duration-500 ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         {children}

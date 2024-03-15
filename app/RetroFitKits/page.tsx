@@ -1,3 +1,5 @@
+"use client"
+
 import { AnimatedElementRight } from '../components/AnimatedElementRight';
 import { AnimatedElementLeft } from '../components/AnimatedElementLeft';
 import { GoPaperAirplane } from "react-icons/go";

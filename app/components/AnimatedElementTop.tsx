@@ -1,5 +1,3 @@
-"use client"
-
 import { useInView } from 'react-intersection-observer';
 import { ReactNode } from 'react';
 
