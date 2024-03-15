@@ -8,7 +8,7 @@ interface AnimatedElementProps {
 export const AnimatedElementBottom: React.FC<AnimatedElementProps> = ({ children }) => {
     const [ref, inView] = useInView({
       triggerOnce: false,
-      threshold: 0.8,
+      threshold: 0.5,
     });
   
     return (
