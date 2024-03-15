@@ -5,7 +5,7 @@ import { AnimatedElementTop } from '../AnimatedElementTop';
 
 export const ListOne = () => {
     return (
-        <div className='flex flex-col text-white items-center text-center space-y-4 p-10 bg-gradient-to-b from-gray-600 via-gray-900 to-black'>
+        <div className='flex flex-col text-white items-center text-center space-y-4 p-10 bg-gradient-to-b from-[#88674E] to-black'>
                 <AnimatedElementRight><h1 className='text-5xl'>What Do I get for Reserving A Kit?</h1></AnimatedElementRight>
                 <AnimatedElementLeft>
                 <ul className='space-y-4'>

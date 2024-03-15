@@ -47,7 +47,7 @@ export const Slide750 = () => {
                 Multiple Applications & Configurations
               </h2>
             </div>
-            <div className='absolute bottom-4 w-full flex justify-center'>
+            <div className='absolute bottom-10 w-full flex justify-center'>
             {slideImages.map((_, slideIndex) => (
                 <RxDotFilled key={slideIndex} onClick={() => goToSlide(slideIndex)} className={`scale-150 mx-1 ${currentIndex === slideIndex ? 'text-blue-600' : 'text-white'}`} />
             ))}

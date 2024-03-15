@@ -37,8 +37,8 @@ export const Slide500 = () => {
             <div style={{ backgroundImage: `url(${slideImages[currentIndex]})` }}
                  className='w-full h-full bg-no-repeat bg-center bg-cover'></div>
 
-            <BsChevronCompactLeft onClick={prevSlide} size={30} className='absolute top-[50%] left-5 text-black hover:scale-150 duration-150'/>
-            <BsChevronCompactRight onClick={nextSlide} size={30} className='absolute top-[50%] right-5 text-black hover:scale-150 duration-150'/>
+            <BsChevronCompactLeft onClick={prevSlide} size={50} className='absolute top-[50%] left-5 text-black hover:scale-150 duration-150'/>
+            <BsChevronCompactRight onClick={nextSlide} size={50} className='absolute top-[50%] right-5 text-black hover:scale-150 duration-150'/>
 
             <div className="absolute bottom-24 text-4xl left-1/2 transform -translate-x-1/2">
               <h2>
