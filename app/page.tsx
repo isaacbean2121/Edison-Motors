@@ -8,28 +8,35 @@ import { Footer } from './components/Footer';
 
 export default function Home() {
   return (
-    <div className='snap-y snap-mandatory h-screen overflow-auto' style={{ scrollBehavior: 'smooth' }}>
-      <Hero
-        title=""
-        subtitle="Explore our range of products"
-        image={front.src}
-        route='null' 
-      />
-      <Hero 
-        title="500 Series"
-        subtitle="Explore our range of products"
-        image={fivetandem.src} 
-        route='/500Info'
-      />
-      <Hero 
-        title="750 Series"
-        subtitle="Explore our range of products"
-        image={seven.src}
-        route='750Info' 
-      />
+    <div>
+      <div className='snap-y snap-mandatory h-screen overflow-auto' style={{ scrollBehavior: 'smooth' }}>
+        <div className="snap-start">
+          <video 
+            className="w-full h-screen object-cover"
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src="/assets/video/EDISON_CINEMATICS.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <Hero 
+          title="500 Series"
+          subtitle="Explore our range of products"
+          image={fivetandem.src} 
+          route='/500Info'
+        />
+        <Hero 
+          title="750 Series"
+          subtitle="Explore our range of products"
+          image={seven.src}
+          route='750Info' 
+        />
 
-      <Footer />
+        <Footer />
 
+      </div>
     </div>
   );
 }
