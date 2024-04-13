@@ -11,6 +11,9 @@
 export const publicRoutes = [
     "/", // landing page
     "/auth/new-verification", // email verification page
+    "/500info",
+    "/750info",
+    "/truck-build",
 ];
 
 /**
@@ -38,4 +41,5 @@ export const apiAuthPrefix = "/api/auth";
  * Saved as a constant here so that it can be easily changed to another page in the future
  * @type {string}
  */
+
 export const DEFAULT_LOGIN_REDIRECT = "/settings"

@@ -17,12 +17,19 @@ export default function Hero({ title, subtitle, image, route }: { title: string,
 
       {/* Buttons at the bottom */}
       <div className='flex justify-center pb-10'>
-        <button className='bg-black text-white px-4 py-2 rounded mr-4 hover:scale-110 duration-150'>Build Yours</button>
-        <button className='bg-white text-black px-4 py-2 rounded hover:scale-110 duration-150'>
-          <Link href={route}>Learn More</Link>
+      <Link
+        href="/truck-build" >
+        <button className='bg-black text-white px-4 py-2 rounded mr-4 hover:scale-110 duration-150'>
+        Build Yours
         </button>
+      </Link>
+      <Link
+        href={route} >
+        <button className='bg-white text-black px-4 py-2 rounded hover:scale-110 duration-150'>
+        Learn More
+        </button>
+      </Link>
         
-
       </div>
 
     </div>
