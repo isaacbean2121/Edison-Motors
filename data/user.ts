@@ -19,3 +19,21 @@ export const getUserById = async (id: string) => {
         return null;
     }
 };
+
+export const getAllUsers = async () => {
+    try {
+        return await db.user.findMany({
+            orderBy: { email: "asc" },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                role: true,
+                emailVerified: true,
+                isTwoFactorEnabled: true,
+            },
+        });
+    } catch {
+        return [];
+    }
+};

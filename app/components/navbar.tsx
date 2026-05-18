@@ -2,15 +2,15 @@
 
 
 import React, { useState } from 'react';
-import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../../public/assets/logo/edison_logo_inverted_2.png';
 import Link from 'next/link';
+import { NavBarAccount } from './navbar-account';
 
 
 const MenuItems = () => {
-    const items = [["250 Series", "/"], ["500 Series", "/500info"], ["750 Series", "/750info"], ["Retrofit Kits", "/RetroFitKits"], ["About Us", "/"]];
+    const items = [["250 Series", "/"], ["500 Series", "/500Info"], ["750 Series", "/750Info"], ["Retrofit Kits", "/RetroFitKits"], ["About Us", "/"]];
     return (
         <ul className="flex flex-col md:flex-row items-center">
             {items.map((item) => (
@@ -55,12 +55,8 @@ export default function NavBar() {
                     <MenuItems />
                 </div> 
 
-                {/* Account on the right */}
-                <div className="hidden md:flex px-3 py-2 cursor-pointer hover:rounded custom-underline">
-                    <ul className="flex items-center">
-                        <PersonIcon />
-                        <li>Account</li>
-                    </ul>
+                <div className="hidden md:flex">
+                    <NavBarAccount />
                 </div>
             </div>
 

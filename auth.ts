@@ -1,19 +1,21 @@
 import NextAuth from "next-auth"
-import { UserRole } from "@prisma/client"
+import { UserRole } from "@/lib/roles"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 
 import { db } from "@/lib/db"
 import authConfig from "@/auth.config"
 import { getUserById } from "@/data/user"
 import { getTwoFactorConfirmationByUserId } from "./data/two-factor-confirmation"
+import { isDevAuth } from "@/lib/dev"
 
 
 export const {
-  handlers: { GET, POST },
+  handlers,
   auth,
   signIn,
   signOut,
 } = NextAuth({
+  trustHost: true,
   callbacks: {
     async redirect({ url, baseUrl }) {
       // Allows relative callback URLs
@@ -32,8 +34,16 @@ export const {
 
       const existingUser = await getUserById(userId);
 
-      // prevent sign in without email verification
-      if (!existingUser?.emailVerified) return false;
+      if (!existingUser?.emailVerified) {
+        if (isDevAuth()) {
+          await db.user.update({
+            where: { id: userId },
+            data: { emailVerified: new Date() },
+          });
+        } else {
+          return false;
+        }
+      }
       
       // 2FA check
       if (existingUser?.isTwoFactorEnabled) {

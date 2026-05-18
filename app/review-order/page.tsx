@@ -1,88 +1,62 @@
 "use client";
 
-import { useState } from 'react';
-import supabase from '../../supabaseClient';
+import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 
-type SearchParams = {
-    lights: string;
-    steeringWheel: string;
-    mirrors: string;
-    fifthWheel: string;
-    pto: string;
-    battery_pack: string;
-    generator_pack: string;
-    frame_rail : string;
-    wheelbase : string;
-};
+export default function ReviewOrderPage() {
+  const searchParams = useSearchParams();
 
-const ReviewOrderPage = ({ searchParams }: { searchParams: SearchParams }) => {
-    const [formData, setFormData] = useState<SearchParams>({
-        lights: searchParams.lights,
-        steeringWheel: searchParams.steeringWheel,
-        mirrors: searchParams.mirrors,
-        fifthWheel: searchParams.fifthWheel,
-        pto: searchParams.pto,
-        battery_pack: searchParams.battery_pack,
-        generator_pack: searchParams.generator_pack,
-        frame_rail: searchParams.frame_rail,
-        wheelbase: searchParams.wheelbase,
-    });
+  const [formData, setFormData] = useState({
+    lights: searchParams.get("lights") ?? "",
+    steeringWheel: searchParams.get("steeringWheel") ?? "",
+    mirrors: searchParams.get("mirrors") ?? "",
+    fifthWheel: searchParams.get("fifthWheel") ?? "",
+    pto: searchParams.get("pto") ?? "",
+    battery_pack: searchParams.get("battery_pack") ?? "",
+    generator_pack: searchParams.get("generator_pack") ?? "",
+    frame_rail: searchParams.get("frame_rail") ?? "",
+    wheelbase: searchParams.get("wheelbase") ?? "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmitOrder = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+  const handleSubmitOrder = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
 
-        try {
-            const { data, error } = await supabase.from('selections').insert([formData]);
-            if (error) {
-                console.error('Error inserting data:', error.message);
-            } else {
-                console.log('Data inserted successfully:', data);
-                // Reset formData after successful submission
-                setFormData({
-                    lights: '',
-                    steeringWheel: '',
-                    mirrors: '',
-                    fifthWheel: '',
-                    pto: '',
-                    battery_pack: '',
-                    generator_pack: '',
-                    frame_rail: '',
-                    wheelbase: '',
-                });
-            }
-        } catch (error: any) {
-            console.error('Error submitting form data:', error.message);
-        }
-    };
-
-    return (
-        
-            <div className="max-w-2xl mx-auto py-10 mt-10">
-            <form onSubmit={handleSubmitOrder} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div className="mb-4">
-                    <h1 className="text-2xl font-bold mb-4">Review Order</h1>
-                    <p>Lights: {formData.lights}</p>
-                    <p>Steering Wheel: {formData.steeringWheel}</p>
-                    <p>Mirrors: {formData.mirrors}</p>
-                    <p>Fifth Wheel: {formData.fifthWheel}</p>
-                    <p>PTO: {formData.pto}</p>
-                    <p>Battery Pack: {formData.battery_pack}</p>
-                    <p>Generator: {formData.generator_pack}</p>
-                    <p>Frame Rail: {formData.frame_rail}</p>
-                    <p>Wheelbase: {formData.wheelbase}</p>
-                </div>
-                <div className="flex items-center justify-center">
-                    <button
-                        type="submit"
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    >
-                        Place Order
-                    </button>
-                </div>
-            </form>
+  return (
+    <div className="mx-auto max-w-2xl px-4 py-10 pt-24">
+      <form
+        onSubmit={handleSubmitOrder}
+        className="mb-4 rounded bg-white px-8 pb-8 pt-6 shadow-md"
+      >
+        <h1 className="mb-4 text-2xl font-bold">Review Order</h1>
+        <div className="mb-4 space-y-1">
+          <p>Lights: {formData.lights || "—"}</p>
+          <p>Steering Wheel: {formData.steeringWheel || "—"}</p>
+          <p>Mirrors: {formData.mirrors || "—"}</p>
+          <p>Fifth Wheel: {formData.fifthWheel || "—"}</p>
+          <p>PTO: {formData.pto || "—"}</p>
+          <p>Battery Pack: {formData.battery_pack || "—"}</p>
+          <p>Generator: {formData.generator_pack || "—"}</p>
+          <p>Frame Rail: {formData.frame_rail || "—"}</p>
+          <p>Wheelbase: {formData.wheelbase || "—"}</p>
         </div>
-        
-    );
-};
-
-export default ReviewOrderPage;
+        {submitted ? (
+          <p className="text-center font-medium text-green-700">
+            Order placed (demo — not saved to a database).
+          </p>
+        ) : (
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            >
+              Place Order
+            </button>
+          </div>
+        )}
+      </form>
+    </div>
+  );
+}

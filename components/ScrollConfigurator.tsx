@@ -67,7 +67,7 @@ export default function ScrollConfigurator({ truck }: ScrollConfiguratorProps) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/all-options?truckId=${truck.id}`);
+                const response = await fetch(`/api/all-options?truckId=${truck.id}`);
 
                 if (!response.ok) {
                     throw new Error('Failed to fetch options');

@@ -7,6 +7,7 @@ import { Slide500 } from '../components/500Info/Slide500';
 import { BuildYoursButton } from '../components/BuildYoursButton';
 import { AnimatedElementBottom } from '../components/AnimatedElementBottom';
 import {Footer} from "../components/Footer";
+import { HERO_IMAGE_500 } from "@/lib/truck-carousel-images";
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
       <NavBar />
       <main className='snap-y snap-mandatory overflow-hidden' style={{ scrollBehavior: 'smooth' }}>
         <section className="h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center relative snap-start"
-                 style={{ backgroundImage: "url('https://nymaclqvkznzomxrgzwo.supabase.co/storage/v1/object/public/part_asset/500%20Info%201.jpg')" }}>
+                 style={{ backgroundImage: `url('${HERO_IMAGE_500}')` }}>
           <div className="absolute top-1/4 left-16"></div>
 
           <div className="absolute top-40 left-72">

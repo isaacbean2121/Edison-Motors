@@ -8,6 +8,7 @@ import { RegisterSchema } from "@/schemas";
 import { getUserByEmail } from "@/data/user";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
+import { isDevAuth } from "@/lib/dev";
 
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
     // server-side validation using zod bc client-side validation can be bypassed easily
@@ -29,20 +30,24 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
         return { error: "Email already in use!"};
     }
 
-    // if email is unique, create a new user
     await db.user.create({
         data: {
             name,
             email,
-            password: hashedPassword, // store ONLY hashed passwords
-        }
+            password: hashedPassword,
+            ...(isDevAuth() ? { emailVerified: new Date() } : {}),
+        },
     });
+
+    if (isDevAuth()) {
+        return { success: "Account created. You can sign in now." };
+    }
 
     const verificationToken = await generateVerificationToken(email);
     await sendVerificationEmail(
-        verificationToken.email, 
+        verificationToken.email,
         verificationToken.token,
     );
 
-    return { success: "Confirmation email sent!"};
+    return { success: "Confirmation email sent!" };
 };

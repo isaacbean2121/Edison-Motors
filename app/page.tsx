@@ -42,7 +42,7 @@ export default function Home() {
           }
           buttonLearn={
             <Link
-              href={{ pathname: "/500info" }}
+              href={{ pathname: "/500Info" }}
             >
               Learn More
             </Link>
@@ -61,7 +61,7 @@ export default function Home() {
           }
           buttonLearn={
             <Link
-              href={{ pathname: "/750info" }}
+              href={{ pathname: "/750Info" }}
             >
               Learn More
             </Link>

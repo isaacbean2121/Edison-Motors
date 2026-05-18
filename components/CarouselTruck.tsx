@@ -1,76 +1,83 @@
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable';
-import { Card, CardContent } from "@/components/ui/card"
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { RxDotFilled } from 'react-icons/rx';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import React from 'react';
+import { useState, useEffect, useCallback } from "react";
+import { useSwipeable } from "react-swipeable";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 
-export default function CarouselTruck({ img }: { img: string }) {
+interface CarouselTruckProps {
+  img?: string;
+  slides?: string[];
+}
 
-  console.log("image is " + img);
-
+export default function CarouselTruck({ img, slides: slidesProp }: CarouselTruckProps) {
   const [slides, setSlides] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (img) {
+    if (slidesProp && slidesProp.length > 0) {
+      setSlides(slidesProp);
+      setCurrentIndex(0);
+    } else if (img) {
       setSlides([img]);
+      setCurrentIndex(0);
     }
-  }, [img]);
+  }, [img, slidesProp]);
 
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((i) => (i === 0 ? Math.max(slides.length - 1, 0) : i - 1));
+  }, [slides.length]);
 
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex);
-  };
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((i) =>
+      slides.length === 0 || i === slides.length - 1 ? 0 : i + 1
+    );
+  }, [slides.length]);
 
   const swipeHandlers = useSwipeable({
-    onSwipedLeft: nextSlide, // Swipe left to go to the next slide
-    onSwipedRight: prevSlide, // Swipe right to go to the previous slide
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
   });
 
+  const currentSlide = slides[currentIndex];
+
   return (
-    <div className='max-w-[1400px] h-screen w-full m-auto pt-16 relative group '>
-      <div
-        {...swipeHandlers}
-        style={{ backgroundImage: `url(${slides[currentIndex]})` }}
-        className='w-full h-full bg-center bg-cover duration-500 bg-gray-300'
-      ></div>
-      <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
-      </div>
-      <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
-      </div>
-      <div className='flex top-4 justify-center'>
-        {slides.map((_, slideIndex) => (
+    <div className="group relative m-auto h-screen w-full max-w-[1400px] pt-16">
+      {!currentSlide ? (
+        <div className="h-full w-full bg-gray-800" />
+      ) : (
+        <>
           <div
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-            className={`text-2xl cursor-pointer ${currentIndex === slideIndex ? 'text-blue-500' : ''}`}
-          >
-            <RxDotFilled />
-          </div>
-        ))}
-      </div>
+            {...swipeHandlers}
+            style={{ backgroundImage: `url(${currentSlide})` }}
+            className="h-full w-full bg-cover bg-center bg-gray-800 duration-500"
+          />
+          {slides.length > 1 && (
+            <>
+              <div className="absolute left-5 top-[50%] -translate-y-1/2 cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white">
+                <BsChevronCompactLeft onClick={prevSlide} size={30} />
+              </div>
+              <div className="absolute right-5 top-[50%] -translate-y-1/2 cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white">
+                <BsChevronCompactRight onClick={nextSlide} size={30} />
+              </div>
+              <div className="absolute top-4 flex w-full justify-center">
+                {slides.map((_, slideIndex) => (
+                  <div
+                    key={slideIndex}
+                    onClick={() => setCurrentIndex(slideIndex)}
+                    className={`cursor-pointer text-2xl ${
+                      currentIndex === slideIndex
+                        ? "text-blue-500"
+                        : "text-white/60"
+                    }`}
+                  >
+                    <RxDotFilled />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </>
+      )}
     </div>
   );
 }
+

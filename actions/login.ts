@@ -14,6 +14,7 @@ import { generateTwoFactorToken } from "@/lib/tokens";
 import { sendTwoFactorTokenEmail } from "@/lib/mail";
 import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
+import { isDevAuth } from "@/lib/dev";
 
 export const login = async (values: z.infer<typeof LoginSchema>) => {
     // server-side validation using zod bc client-side validation can be bypassed easily (security measure)
@@ -32,16 +33,23 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     }
 
     if (!existingUser.emailVerified) {
-        const verificationToken = await generateVerificationToken(
-            existingUser.email,
-        );
+        if (isDevAuth()) {
+            await db.user.update({
+                where: { id: existingUser.id },
+                data: { emailVerified: new Date() },
+            });
+        } else {
+            const verificationToken = await generateVerificationToken(
+                existingUser.email,
+            );
 
-        await sendVerificationEmail(
-            verificationToken.email,
-            verificationToken.token,
-        );
+            await sendVerificationEmail(
+                verificationToken.email,
+                verificationToken.token,
+            );
 
-        return {success: "Confirmation email sent!"};
+            return { success: "Confirmation email sent!" };
+        }
     }
 
     if (existingUser.isTwoFactorEnabled && existingUser.email) {

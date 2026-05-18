@@ -11,8 +11,8 @@
 export const publicRoutes = [
     "/", // landing page
     "/auth/new-verification", // email verification page
-    "/500info",
-    "/750info",
+    "/500Info",
+    "/750Info",
     "/truck-build",
 ];
 
